@@ -1,3 +1,9 @@
 .env
 /.htpasswd/*
 !/.htpasswd/.gitkeep
+
+/certs/*
+!/certs/.gitkeep
+
+/vhost.d/*
+!/vhost.d/template
