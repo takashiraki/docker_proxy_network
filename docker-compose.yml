@@ -14,6 +14,7 @@ services:
       - ./certs:/etc/nginx/certs
       - ./.htpasswd:/etc/nginx/htpasswd
       - ./vhost.d:/etc/nginx/vhost.d
+      - html:/usr/share/nginx/html
     labels:
       com.github.jrcs.letsencrypt_nginx_proxy_companion.nginx_proxy: "true"
   
@@ -28,7 +29,10 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock:ro
       - ./certs:/etc/nginx/certs
       - ./vhost.d:/etc/nginx/vhost.d
-      - /usr/share/nginx/html
+      - html:/usr/share/nginx/html
+
+volumes:
+  html:
 
 networks:
   my_proxy_network:
