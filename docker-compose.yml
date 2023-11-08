@@ -11,6 +11,7 @@ services:
       - my_proxy_network
     volumes:
       - /var/run/docker.sock:/tmp/docker.sock:ro
+      - ./certs:/etc/nginx/certs
       - ./.htpasswd:/etc/nginx/htpasswd
       - ./vhost.d:/etc/nginx/vhost.d
     labels:
